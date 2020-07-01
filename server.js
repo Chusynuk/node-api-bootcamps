@@ -12,7 +12,7 @@ dotenv.config({path: './config/config.env'})
 connectDB();
 
 //Routes files for
-const router = require('./routes/bootcamps');
+const bootcamps = require('./routes/bootcamps');
 
 const app = express();
 
@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Mounter routers
-app.use('/api/v1/bootcamps', router)
+app.use('/api/v1/bootcamps', bootcamps)
 
 app.use(errorHandler);
 
